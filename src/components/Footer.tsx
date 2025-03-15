@@ -7,7 +7,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              NOZE<span className="text-gray-400">PERFUME</span>
+              NOZE<span className="text-gray-600">PERFUME</span>
             </h3>
             <p className="text-gray-400">
               Luxury fragrances for the discerning individual
