@@ -82,7 +82,7 @@ const ContactUs = () => {
             {isSubmitted ? (
               <div className="text-center text-white">
                 <p className="mb-4">
-                  Thank you for contacting us! We'll get back to you soon.
+                  Thank you for contacting us! We&apos;ll get back to you soon.
                 </p>
                 <button
                   className="bg-gray-950/50 border border-gray-600 px-8 py-3 hover:bg-gray-900 cursor-pointer transition duration-300 rounded-lg"
