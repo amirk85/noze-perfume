@@ -1,5 +1,3 @@
-// File: components/Catalogue.tsx
-"use client";
 import React from "react";
 import ProductCard from "@/shared/ProductCard";
 

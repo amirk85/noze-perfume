@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { FiTruck, FiHeart } from "react-icons/fi"; // Sourcing and Care icons

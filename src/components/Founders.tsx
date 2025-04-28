@@ -1,5 +1,3 @@
-// File: components/Founders.tsx
-"use client";
 import React from "react";
 
 const Founders = () => {
@@ -9,7 +7,7 @@ const Founders = () => {
       name: "Rashid Babu",
       image: "/founders/rashid.jpg", // Replace with the actual image path
       description:
-        "Rashid Babu is a graduate in Business Administration from the University of Lahore. With over 10 years of experience in the perfume industry, Rashid has developed a keen sense for premium fragrance sourcing and is responsible for managing the brand's operations. He is passionate about blending modern marketing strategies with timeless fragrance creation.",
+        "Rashid Babu is a graduate in Business Administration from the University of Lahore. With over 10 years of experience in the perfume industry, Rashid has developed a keen sense for premium fragrance sourcing and is responsible for managing the brand&#39;s operations. He is passionate about blending modern marketing strategies with timeless fragrance creation.",
     },
 
     {
@@ -17,14 +15,14 @@ const Founders = () => {
       name: "Rehan Shaikh",
       image: "/founders/rehan.jpg", // Replace with the actual image path
       description:
-        "Rehan Shaikh, with a background in International Business and Marketing from Harvard University, has over 12 years of experience in brand strategy and international expansion. He is responsible for Noze Perfume's global presence and strategic partnerships. Rehan believes in providing unique and luxurious perfume experiences for customers around the world.",
+        "Rehan Shaikh, with a background in International Business and Marketing from Harvard University, has over 12 years of experience in brand strategy and international expansion. He is responsible for Noze Perfume&#39;s global presence and strategic partnerships. Rehan believes in providing unique and luxurious perfume experiences for customers around the world.",
     },
     {
       id: 3,
       name: "Maqdum Pasha",
       image: "/founders/maqdum.jpg", // Replace with the actual image path
       description:
-        "Maqdum Pasha holds a Master's degree in Chemical Engineering from the University of Karachi. He specializes in product development and quality assurance. His meticulous approach ensures that Noze Perfume's products meet the highest industry standards. Maqdum's love for chemistry and fragrances enables him to push the boundaries of scent innovation.",
+        "Maqdum Pasha holds a Master&#39;s degree in Chemical Engineering from the University of Karachi. He specializes in product development and quality assurance. His meticulous approach ensures that Noze Perfume&#39;s products meet the highest industry standards. Maqdum&#39;s love for chemistry and fragrances enables him to push the boundaries of scent innovation.",
     },
   ];
 

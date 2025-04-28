@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import { FaBox, FaChartLine, FaStar } from "react-icons/fa"; // Icons for the benefits

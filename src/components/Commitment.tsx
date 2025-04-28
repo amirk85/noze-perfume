@@ -1,5 +1,3 @@
-// File: components/Commitment.tsx
-"use client";
 import BorderedTitle from "@/shared/BorderedTitle";
 import React from "react";
 import { FaStar, FaRecycle, FaHandsHelping } from "react-icons/fa"; // Icons for commitment
@@ -51,7 +49,9 @@ const Commitment = () => {
                   <h3 className="text-2xl font-bold mb-2 text-white">
                     {commitment.title}
                   </h3>
-                  <p className="text-gray-400">{commitment.description}</p>
+                  <p className="text-gray-400">
+                    {commitment.description.replace(/'([a-zA-Z])/g, "&#39;$1")}
+                  </p>
                 </div>
               </div>
             ))}

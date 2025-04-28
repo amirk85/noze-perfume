@@ -1,4 +1,3 @@
-// File: components/ContactUs.tsx
 "use client";
 import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
@@ -27,7 +26,7 @@ const ContactUs = () => {
     e.preventDefault();
     // Display form data in an alert
     alert(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
+      `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message.replace(/'([a-zA-Z])/g, "&#39;$1")}`,
     );
 
     // Reset form data and set the submitted state

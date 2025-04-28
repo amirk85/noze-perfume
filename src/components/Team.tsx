@@ -1,5 +1,3 @@
-// File: components/Team.tsx
-"use client";
 import React from "react";
 
 const Team = () => {
@@ -88,7 +86,7 @@ const Team = () => {
               <div className="relative w-24 h-24 mx-auto -mt-16 mb-6 border-4 border-gray-800 rounded-full overflow-hidden">
                 <img
                   // src={member.image}
-                  src={"/founders/avatar.jpg"}
+                  src={"/team/avatar.jpg"}
                   alt={`Team member ${member.name}`}
                   className="w-full h-full object-cover"
                 />
@@ -99,7 +97,9 @@ const Team = () => {
               <p className="text-gray-400 text-center mb-4">({member.designation})</p>
 
               {/* Description */}
-              <p className="text-gray-400 mt-4">{member.description}</p>
+              <p className="text-gray-400 mt-4">
+                {member.description.replace(/'([a-zA-Z])/g, "&#39;$1")}
+              </p>
             </div>
           ))}
         </div>

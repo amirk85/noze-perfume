@@ -1,5 +1,3 @@
-// File: components/Services.tsx
-"use client";
 import React from "react";
 import {
   FaShippingFast,

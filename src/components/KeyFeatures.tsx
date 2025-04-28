@@ -1,5 +1,3 @@
-// File: components/KeyFeatures.tsx
-"use client";
 import { FaShieldAlt, FaGlobe, FaTags } from "react-icons/fa";
 import React from "react";
 

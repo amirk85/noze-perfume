@@ -4,7 +4,6 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Catalogue from "@/components/Catalogue";
-import Export from "@/components/Export";
 import AboutUs from "@/components/AboutUs";
 import Footer from "@/components/Footer";
 import Founding from "@/components/Founding";
@@ -39,7 +38,6 @@ export default function Home() {
       <Certifications />
       <Commitment />
       <ContactUs />
-      {/* <Export /> */}
       <Footer />
     </div>
   );

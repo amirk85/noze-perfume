@@ -1,4 +1,3 @@
-// File: components/Navbar.tsx
 "use client";
 import React, { useState, useEffect } from "react";
 
@@ -47,31 +46,25 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transition cursor-pointer"
             >
               HOME
             </button>
             <button
               onClick={() => scrollToSection("catalogue")}
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transition cursor-pointer"
             >
               CATALOGUE
             </button>
             <button
-              onClick={() => scrollToSection("export")}
-              className="text-gray-300 hover:text-white transition"
-            >
-              EXPORT
-            </button>
-            <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-300 hover:text-white transition"
+              className="text-gray-300 hover:text-white transition cursor-pointer"
             >
               ABOUT US
             </button>
           </div>
           <div className="md:hidden">
-            <button className="text-gray-300 hover:text-white">☰</button>
+            <button className="text-gray-300 hover:text-white ">☰</button>
           </div>
         </div>
       </div>

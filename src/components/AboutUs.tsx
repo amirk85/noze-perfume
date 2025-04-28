@@ -1,9 +1,8 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import BorderedTitle from "@/shared/BorderedTitle";
 
-const About = () => {
+const AboutUs = () => {
   return (
     <section id="about" className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
@@ -50,4 +49,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;
