@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import the Image component from Next.js
 
 const Team = () => {
   const teamMembers = [
@@ -84,11 +85,13 @@ const Team = () => {
             >
               {/* Avatar - smaller size */}
               <div className="relative w-24 h-24 mx-auto -mt-16 mb-6 border-4 border-gray-800 rounded-full overflow-hidden">
-                <img
-                  // src={member.image}
-                  src={"/team/avatar.jpg"}
+                <Image
+                  // src={member.image} // Use the actual image path here
+                  src={"/team/avatar.jpg"} // Use the actual image path here
                   alt={`Team member ${member.name}`}
-                  className="w-full h-full object-cover"
+                  width={96} // Image width (24 * 4)
+                  height={96} // Image height (24 * 4)
+                  className="object-cover"
                 />
               </div>
 

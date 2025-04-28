@@ -1,6 +1,7 @@
 import BorderedTitle from "@/shared/BorderedTitle";
 import React from "react";
 import { FaStar, FaRecycle, FaHandsHelping } from "react-icons/fa"; // Icons for commitment
+import Image from "next/image"; // Import the Image component from Next.js
 
 // Define the list of commitment items outside of the JSX
 const commitmentList = [
@@ -31,9 +32,11 @@ const Commitment = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left Image */}
           <div className="w-full md:w-1/2 relative h-80 md:h-[500px] border border-gray-800 overflow-hidden rounded-sm">
-            <img
-              src="/commitment.jpg" // Replace with the actual image path
+            <Image
+              src="/commitment.jpg" // Use the actual image path here
               alt="Commitment"
+              width={500} // Image width (or set your own width)
+              height={500} // Image height (or set your own height)
               className="w-full h-full object-cover rounded-lg"
             />
           </div>

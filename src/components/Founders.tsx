@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import the Image component from Next.js
 
 const Founders = () => {
   const founders = [
@@ -43,9 +44,11 @@ const Founders = () => {
               className="bg-gray-900 p-6 rounded-lg shadow-lg flex flex-col justify-between h-full border-2 border-gray-800"
             >
               <div className="relative w-32 h-32 mx-auto -mt-16 mb-6 border-4 border-gray-800 rounded-full overflow-hidden">
-                <img
-                  src={founder.image}
+                <Image
+                  src={founder.image} // Image path
                   alt={`Founder ${founder.name}`}
+                  width={128} // Width of the image
+                  height={128} // Height of the image
                   className="w-full h-full object-cover"
                 />
               </div>
