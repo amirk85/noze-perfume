@@ -41,7 +41,7 @@ const Navbar = () => {
               className="text-2xl font-bold tracking-tighter cursor-pointer"
               onClick={() => scrollToSection("hero")}
             >
-              NOZE<span className="text-gray-600">PERFUME</span>
+              NOZE<span className="text-gray-600">EXPORTS</span>
             </h1>
           </div>
           <div className="hidden md:flex space-x-8">

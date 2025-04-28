@@ -29,7 +29,7 @@ const Export = () => {
   ];
 
   return (
-    <section id="export" className="py-24 bg-gray-900/50">
+    <section id="export" className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">GLOBAL EXPORT</h2>

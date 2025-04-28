@@ -1,17 +1,18 @@
-// File: components/About.tsx
 "use client";
 import React from "react";
 import Image from "next/image";
+import BorderedTitle from "@/shared/BorderedTitle";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-black">
+    <section id="about" className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Left Image */}
           <div className="w-full md:w-1/2">
-            <div className="relative h-96 w-full">
+            <div className="relative h-96 w-full mb-6 md:mb-0 border border-gray-800 overflow-hidden rounded-sm">
               <Image
-                src={"/about-us.jpg"}
+                src={"/about-us.jpg"} // Replace with your actual image path
                 alt="Perfume crafting"
                 layout="fill"
                 objectFit="cover"
@@ -19,9 +20,10 @@ const About = () => {
               />
             </div>
           </div>
+
+          {/* Right Text */}
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-4xl font-bold">ABOUT US</h2>
-            <div className="w-24 h-1 bg-gray-400"></div>
+						<BorderedTitle title={"ABOUT US"}/>
             <p className="text-gray-300">
               Founded in 2020, Noze Perfume is a luxury fragrance house
               dedicated to the art of scent creation. Our master perfumers

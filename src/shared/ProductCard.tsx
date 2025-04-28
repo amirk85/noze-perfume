@@ -7,10 +7,10 @@ interface ProductProps {
     id: number;
     name: string;
     description: string;
-    exportInfo: string;
-    price: string;
+    exportInfo?: string;
+    price?: string;
     image: string;
-    badge: string;
+    badge?: string;
   };
 }
 
@@ -32,9 +32,11 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
         <p className="text-gray-500 mb-4 text-sm">{product.exportInfo}</p>
         <div className="flex justify-between items-center">
           <p className="text-xl font-light">{product.price}</p>
-          <span className="text-xs px-2 py-1 bg-gray-800 rounded-full text-gray-400">
-            {product.badge}
-          </span>
+          {product.badge && (
+            <span className="text-xs px-2 py-1 bg-gray-800 rounded-full text-gray-400">
+              {product.badge}
+            </span>
+          )}
         </div>
       </div>
     </div>
