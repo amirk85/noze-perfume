@@ -1,4 +1,5 @@
 import React from "react";
+import { InstagramIcon, TwitterIcon, FacebookIcon } from "lucide-react";
 
 function Footer() {
   return (
@@ -13,26 +14,35 @@ function Footer() {
               Luxury fragrances for the discerning individual
             </p>
           </div>
-          {/* <div> */}
-          {/*   <h4 className="text-lg font-semibold mb-4">CONTACT</h4> */}
-          {/*   <p className="text-gray-400">info@nozeperfume.com</p> */}
-          {/*   <p className="text-gray-400">+1 (555) 123-4567</p> */}
-          {/* </div> */}
+
           <div>
             <h4 className="text-lg font-semibold mb-4">FOLLOW US</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                Instagram
+            <div className="flex space-x-6">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white"
+                aria-label="Instagram"
+              >
+                <InstagramIcon size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                Twitter
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white"
+                aria-label="Twitter"
+              >
+                <TwitterIcon size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                Facebook
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white"
+                aria-label="Facebook"
+              >
+                <FacebookIcon size={24} />
               </a>
             </div>
           </div>
         </div>
+
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
           <p>© 2025 NozeExports. All rights reserved.</p>
         </div>
