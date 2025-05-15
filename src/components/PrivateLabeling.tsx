@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { FaBox, FaChartLine, FaStar } from "react-icons/fa"; // Icons for the benefits
+import { FaBox, FaChartLine, FaStar } from "react-icons/fa";
+import BorderedTitle from "@/shared/BorderedTitle";
 
 const Benefits = [
   {
@@ -25,17 +26,19 @@ const Benefits = [
 
 const PrivateLabeling = () => {
   return (
-    <section id="private-labeling" className="py-24 bg-gray-950/50">
+    <section
+      id="private-labeling"
+      className="py-6 bg-gray-950/50 md:py-12 lg:py-20"
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left Content */}
           <div className="w-full md:w-1/2 text-gray-300 space-y-8">
-            {/* Header inside text */}
-            <p className="text-4xl font-bold mb-4 text-white">
-              Private Labeling Solutions
-            </p>
-            <div className="w-24 h-1 bg-gray-400 mb-8"></div>
-            <p className="text-xl">
+            <BorderedTitle
+              title="Private Labeling Solutions"
+              className="grid place-items-center"
+            />
+            <p className="text-sm md:text-xl">
               <span className="font-semibold">NozeExports </span>
               offers private labeling services for wholesalers, retail chains,
               and distributors in the international market. We provide exclusive
@@ -45,18 +48,21 @@ const PrivateLabeling = () => {
               premium private labeling that meets the highest standards.
             </p>
 
-            <h3 className="text-2xl font-semibold text-white">
+            <h3 className="text-lg md:text-2xl font-semibold text-white">
               Benefits Include:
             </h3>
+
             <div className="space-y-4">
               {Benefits.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="mt-1">{item.icon}</div>
                   <div>
-                    <h4 className="text-xl font-bold text-white">
+                    <h4 className="text-lg md:text-xl font-bold text-white">
                       {item.title}
                     </h4>
-                    <p className="text-gray-400">{item.description}</p>
+                    <p className="text-sm md:text-base text-gray-400">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               ))}

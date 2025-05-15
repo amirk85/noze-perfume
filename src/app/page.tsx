@@ -18,6 +18,7 @@ import PrivateLabeling from "@/components/PrivateLabeling";
 import Certifications from "@/components/Certifications";
 import Commitment from "@/components/Commitment";
 import ContactUs from "@/components/ContactUs";
+import ScrollToTopButton from "@/shared/ScrollToTopButton";
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
       <Commitment />
       <ContactUs />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

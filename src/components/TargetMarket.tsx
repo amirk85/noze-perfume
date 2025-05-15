@@ -1,14 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import BorderedTitle from "@/shared/BorderedTitle";
 
 const TargetMarket = () => {
   return (
-    <section id="target-market" className="py-24 bg-gray-950">
+    <section id="target-market" className="py-8 bg-gray-950 md:py-12 lg:py-20">
       <div className="container mx-auto px-6 text-center">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4">Target Market</h2>
-          <div className="w-24 h-1 bg-gray-400 mx-auto"></div>
-        </div>
+        <BorderedTitle title={"Target Market"} className="grid place-items-center" />
 
         <div className="relative w-full h-[600px] md:h-[700px] border border-gray-800 overflow-hidden rounded-lg">
           <Image

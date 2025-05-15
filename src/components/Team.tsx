@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image"; // Import the Image component from Next.js
+import BorderedTitle from "@/shared/BorderedTitle";
 
 const Team = () => {
   const teamMembers = [
@@ -35,47 +36,15 @@ const Team = () => {
       description:
         "Ensures customer satisfaction by addressing concerns, maintaining relationships, and creating a positive experience for clients.",
     },
-    {
-      id: 5,
-      name: "Michael Johnson",
-      image: "/team/michael.jpg", // Replace with the actual image path
-      designation: "Compliance Officer",
-      description:
-        "Monitors adherence to regulations and industry standards to ensure the company's legal and ethical practices.",
-    },
-    {
-      id: 6,
-      name: "Emily Davis",
-      image: "/team/emily.jpg", // Replace with the actual image path
-      designation: "Product Development Specialist",
-      description:
-        "Leads the development of new products and fragrances, ensuring innovation and quality meet customer expectations.",
-    },
-    {
-      id: 7,
-      name: "James Wilson",
-      image: "/team/james.jpg", // Replace with the actual image path
-      designation: "Finance Manager",
-      description:
-        "Oversees the company's financial health, including budgeting, forecasting, and ensuring proper resource allocation.",
-    },
-    {
-      id: 8,
-      name: "Olivia Moore",
-      image: "/team/olivia.jpg", // Replace with the actual image path
-      designation: "Operations Assistant",
-      description:
-        "Assists in the day-to-day operations of the company, supporting various departments to ensure smooth workflow and efficient processes.",
-    },
   ];
 
   return (
-    <section id="team" className="py-24 bg-gray-950">
+    <section id="team" className="bg-gray-950 py-6 md:py-12 lg:py-20">
       <div className="container mx-auto px-6 text-center">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-gray-100">Meet Our Team</h2>
-          <div className="w-24 h-1 bg-gray-400 mx-auto"></div>
-        </div>
+        <BorderedTitle
+          title={"Meet Our Team"}
+          className="grid place-items-center mb-12"
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {teamMembers.map((member) => (
@@ -96,11 +65,15 @@ const Team = () => {
               </div>
 
               {/* Name and Designation */}
-              <h3 className="text-2xl font-semibold text-gray-100">{member.name}</h3>
-              <p className="text-gray-400 text-center mb-4">({member.designation})</p>
+              <h3 className="text-2xl font-semibold text-gray-100">
+                {member.name}
+              </h3>
+              <p className="text-gray-400 text-center mb-4">
+                ({member.designation})
+              </p>
 
               {/* Description */}
-              <p className="text-gray-400 mt-4">
+              <p className="text-gray-400 mt-4 text-sm md:text-base">
                 {member.description.replace(/'([a-zA-Z])/g, "&#39;$1")}
               </p>
             </div>

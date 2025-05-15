@@ -1,100 +1,178 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import BorderedTitle from "@/shared/BorderedTitle";
 import {
-  FaShippingFast,
-  FaCheckCircle,
-  FaTag,
-  FaHeadset,
-  FaPeopleCarry,
-  FaLeaf,
-  FaCertificate,
-  FaCogs,
-} from "react-icons/fa";
+  Truck,
+  CheckCircle,
+  Tag,
+  Headphones,
+  Users,
+  Leaf,
+  Award,
+  Settings,
+} from "lucide-react";
 
 const Services = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+
+  // More reliable mobile detection
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    
+    // Check immediately on mount
+    checkIsMobile();
+    
+    // Set up listener for window resize
+    window.addEventListener("resize", checkIsMobile);
+    
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      initial: 0,
+      loop: true,
+      slides: {
+        perView: isMobile ? 1.2 : 4,
+        spacing: 16,
+      },
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
+      },
+      created() {
+        setLoaded(true);
+      },
+    }
+  );
+
   const services = [
     {
       id: 1,
       title: "Direct Sourcing",
-      icon: <FaShippingFast />,
-      description:
-        "We directly source high-quality fragrance ingredients from renowned perfumeries worldwide, ensuring premium quality and authenticity.",
+      icon: <Truck />,
+      description: "We source top-quality ingredients from global perfumeries.",
     },
     {
       id: 2,
       title: "Quality Assurance",
-      icon: <FaCheckCircle />,
+      icon: <CheckCircle />,
       description:
-        "Each fragrance goes through stringent quality checks to ensure consistency, longevity, and excellence in every bottle.",
+        "Every product undergoes strict quality checks for excellence.",
     },
     {
       id: 3,
       title: "Competitive Pricing",
-      icon: <FaTag />,
-      description:
-        "We offer the finest perfumes at affordable prices without compromising on quality, making luxury scents accessible to all.",
+      icon: <Tag />,
+      description: "Luxury fragrances at affordable prices for all.",
     },
     {
       id: 4,
-      title: "Customized Customer Care",
-      icon: <FaHeadset />,
-      description:
-        "Our team offers personalized fragrance consultations, helping you find the perfect scent that suits your personality and preferences.",
+      title: "Customer Care",
+      icon: <Headphones />,
+      description: "Personalized consultations to find your perfect scent.",
     },
     {
       id: 5,
-      title: "Logistics and Supply Chain Management",
-      icon: <FaPeopleCarry />,
-      description:
-        "We ensure efficient and timely delivery, ensuring that your perfume orders reach you quickly and in perfect condition.",
+      title: "Logistics Management",
+      icon: <Users />,
+      description: "Fast and reliable delivery with secure handling.",
     },
     {
       id: 6,
-      title: "Sustainable Trade Initiatives",
-      icon: <FaLeaf />,
-      description:
-        "We prioritize sustainability by sourcing ingredients from eco-friendly suppliers and ensuring our packaging is recyclable.",
+      title: "Sustainable Practices",
+      icon: <Leaf />,
+      description: "Eco-friendly sourcing and recyclable packaging.",
     },
     {
       id: 7,
-      title: "Compliance and Certification Services",
-      icon: <FaCertificate />,
-      description:
-        "All our fragrances comply with industry standards, and we provide necessary certifications to ensure safety and authenticity.",
+      title: "Certifications",
+      icon: <Award />,
+      description: "Compliant with global standards and safety certified.",
     },
     {
       id: 8,
-      title: "Advanced Technology Integration",
-      icon: <FaCogs />,
-      description:
-        "We incorporate state-of-the-art technology to enhance our production processes, ensuring precision and superior craftsmanship in every bottle.",
+      title: "Tech Integration",
+      icon: <Settings />,
+      description: "Advanced tech for precision and quality in production.",
     },
   ];
 
   return (
-    <section id="services" className="py-24 bg-gray-950">
-      <div className="container mx-auto px-6 text-center">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-gray-100">
-            Our Services
-          </h2>
-          <div className="w-24 h-1 bg-gray-400 mx-auto"></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-black border border-gray-800 p-6 rounded-lg"
-            >
-              <div className="flex items-center justify-center mb-6 text-gray-300 text-4xl">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-100">
-                {service.title}
-              </h3>
-              <p className="text-gray-400">{service.description}</p>
+    <section id="services" className="py-6 md:py-12 lg:py-20 bg-gray-950">
+      <div className="container mx-auto px-4 md:px-6 text-center">
+        <BorderedTitle title="Services" className="grid place-items-center" />
+        <div className="relative mt-6 md:mt-12">
+          {isMobile ? (
+            // Mobile carousel
+            <div ref={sliderRef} className="keen-slider">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="keen-slider__slide bg-black border border-gray-800 p-4 rounded-lg shrink-0"
+                >
+                  <div className="flex items-center justify-center mb-3 text-gray-300 text-2xl">
+                    {React.cloneElement(service.icon, { size: 32 })}
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-100 mb-1">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-gray-400 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+          ) : (
+            // Desktop grid
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="bg-black border border-gray-800 p-6 rounded-lg"
+                >
+                  <div className="flex items-center justify-center mb-5 text-gray-300 text-4xl">
+                    {React.cloneElement(service.icon, { size: 48 })}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-base text-gray-400 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {/* Pagination Dots - More reliable with CSS hiding instead of conditional rendering */}
+          <div className={`flex justify-center gap-2 mt-4 ${!isMobile ? 'hidden' : ''}`}>
+            {loaded && instanceRef.current && 
+              Array.from({
+                length: instanceRef.current.track.details.slides.length || services.length,
+              }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    if (instanceRef.current) {
+                      instanceRef.current.moveToIdx(idx);
+                    }
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-3 w-3 rounded-full border transition-colors duration-300 ${
+                    currentSlide === idx
+                      ? "bg-white border-white"
+                      : "bg-transparent border-white/50"
+                  }`}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>

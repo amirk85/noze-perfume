@@ -27,16 +27,16 @@ const commitmentList = [
 
 const Commitment = () => {
   return (
-    <section id="commitment" className="py-24 bg-gray-950/50">
+    <section id="commitment" className="bg-gray-950/50 py-6 md:py-12 lg:py-20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Left Image */}
-          <div className="w-full md:w-1/2 relative h-80 md:h-[500px] border border-gray-800 overflow-hidden rounded-sm">
+          {/* Left Image - hidden on mobile */}
+          <div className="hidden md:block w-full md:w-1/2 relative h-80 md:h-[500px] border border-gray-800 overflow-hidden rounded-sm">
             <Image
-              src="/commitment.jpg" // Use the actual image path here
+              src="/commitment.jpg"
               alt="Commitment"
-              width={500} // Image width (or set your own width)
-              height={500} // Image height (or set your own height)
+              width={500}
+              height={500}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -44,7 +44,10 @@ const Commitment = () => {
           {/* Right Content */}
           <div className="w-full md:w-1/2 text-gray-300 space-y-8">
             {/* Header inside text */}
-            <BorderedTitle title={"Our Commitment"} />
+            <BorderedTitle
+              title={"Our Commitment"}
+              className="grid place-items-center"
+            />
             {commitmentList.map((commitment, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="mt-1">{commitment.icon}</div>
@@ -52,7 +55,8 @@ const Commitment = () => {
                   <h3 className="text-2xl font-bold mb-2 text-white">
                     {commitment.title}
                   </h3>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm md:text-base">
+                    {/* Smaller text on mobile, normal size on md+ */}
                     {commitment.description.replace(/'([a-zA-Z])/g, "&#39;$1")}
                   </p>
                 </div>

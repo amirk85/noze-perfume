@@ -24,12 +24,13 @@ const ContactUs = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Display form data in an alert
     alert(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message.replace(/'([a-zA-Z])/g, "&#39;$1")}`,
+      `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message.replace(
+        /'([a-zA-Z])/g,
+        "&#39;$1",
+      )}`,
     );
 
-    // Reset form data and set the submitted state
     setIsSubmitted(true);
     setFormData({
       name: "",
@@ -39,35 +40,37 @@ const ContactUs = () => {
   };
 
   return (
-    <section id="contact-us" className="py-24 bg-gray-950">
-      <div className="container mx-auto px-6">
-        <div className="mb-16"></div>
+    <section id="contact-us" className="bg-gray-950 py-8 md:py-12 lg:py-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        {/* Centered Heading */}
+        <div className="md:mb-12 text-center">
+          {/* Using BorderedTitle here but centered */}
+          <BorderedTitle title="Contact Us" className="grid place-items-center" />
+        </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Left Content - Contact Details */}
-
-          <div className="w-full md:w-1/2 text-gray-300 space-y-8">
-            <BorderedTitle title="Contact Us" />
-            <div className="flex items-start gap-4 mt-16">
-              <FaPhoneAlt size={28} className="text-white" />
+        <div className="flex flex-col md:flex-row md:items-start gap-10 md:gap-16">
+          {/* Left: Contact Details */}
+          <div className="w-full md:w-1/2 text-gray-300 space-y-6 md:space-y-8 text-sm md:text-base">
+            <div className="flex items-start gap-4">
+              <FaPhoneAlt size={24} className="text-white mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-white">Phone</h3>
+                <h3 className="text-lg font-semibold text-white">Phone</h3>
                 <p className="text-gray-400">+1 (234) 567-890</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <FaEnvelope size={28} className="text-white" />
+              <FaEnvelope size={24} className="text-white mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-white">Email</h3>
+                <h3 className="text-lg font-semibold text-white">Email</h3>
                 <p className="text-gray-400">contact@nozeexports.com</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <FaMapMarkerAlt size={28} className="text-white" />
+              <FaMapMarkerAlt size={24} className="text-white mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-white">Address</h3>
+                <h3 className="text-lg font-semibold text-white">Address</h3>
                 <p className="text-gray-400">
                   123 Fragrance Blvd, Suite 45, Perfume City, Country
                 </p>
@@ -75,26 +78,31 @@ const ContactUs = () => {
             </div>
           </div>
 
-          {/* Right Content - Contact Form */}
-          <div className="w-full md:w-1/2 bg-gray-950 p-6 rounded-lg shadow-lg border border-gray-800">
-            <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+          {/* Right: Contact Form */}
+          <div className="w-full md:w-1/2 bg-gray-950 p-5 md:p-8 rounded-lg shadow-lg border border-gray-800">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-5 md:mb-6 text-center md:text-left">
+              Get in Touch
+            </h3>
 
             {isSubmitted ? (
-              <div className="text-center text-white">
+              <div className="text-center text-white text-sm md:text-base">
                 <p className="mb-4">
                   Thank you for contacting us! We&apos;ll get back to you soon.
                 </p>
                 <button
-                  className="bg-gray-950/50 border border-gray-600 px-8 py-3 hover:bg-gray-900 cursor-pointer transition duration-300 rounded-lg"
+                  className="bg-gray-950/50 border border-gray-600 px-6 py-2 md:px-8 md:py-3 hover:bg-gray-900 cursor-pointer transition duration-300 rounded-lg"
                   onClick={() => setIsSubmitted(false)}
                 >
                   Send Another Message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label className="block text-white" htmlFor="name">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div>
+                  <label
+                    className="block text-white text-sm md:text-base mb-1"
+                    htmlFor="name"
+                  >
                     Your Name
                   </label>
                   <input
@@ -103,14 +111,17 @@ const ContactUs = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-800"
+                    className="w-full p-3 md:p-4 bg-gray-900 text-white rounded-lg border border-gray-800 text-sm md:text-base"
                     placeholder="Enter your name"
                     required
                   />
                 </div>
 
-                <div className="mb-4">
-                  <label className="block text-white" htmlFor="email">
+                <div>
+                  <label
+                    className="block text-white text-sm md:text-base mb-1"
+                    htmlFor="email"
+                  >
                     Your Email
                   </label>
                   <input
@@ -119,14 +130,17 @@ const ContactUs = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-800"
+                    className="w-full p-3 md:p-4 bg-gray-900 text-white rounded-lg border border-gray-800 text-sm md:text-base"
                     placeholder="Enter your email"
                     required
                   />
                 </div>
 
-                <div className="mb-4">
-                  <label className="block text-white" htmlFor="message">
+                <div>
+                  <label
+                    className="block text-white text-sm md:text-base mb-1"
+                    htmlFor="message"
+                  >
                     Your Message
                   </label>
                   <textarea
@@ -134,7 +148,7 @@ const ContactUs = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-800"
+                    className="w-full p-3 md:p-4 bg-gray-900 text-white rounded-lg border border-gray-800 text-sm md:text-base"
                     placeholder="Write your message"
                     rows={4}
                     required
@@ -143,7 +157,7 @@ const ContactUs = () => {
 
                 <button
                   type="submit"
-                  className="bg-gray-950/50 border w-full border-gray-600 px-8 py-3 hover:bg-gray-900 cursor-pointer transition duration-300 rounded-lg"
+                  className="bg-gray-950/50 border w-full border-gray-600 px-6 py-3 md:px-8 md:py-3 hover:bg-gray-900 cursor-pointer transition duration-300 rounded-lg text-sm md:text-base"
                 >
                   Send Message
                 </button>
